@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './components/Header/Header';
+import { Route } from 'react-router';
+import Pizza from './components/Pizza/Pizza'
+import Navigation from './components/Header/Navigation/Navigation';
+import Basket from './components/Basket/Basket';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="wrapper">
+            <Header />
+            <Route path="/(|Pizza|Sushi|Wok)/" render={()=><Navigation />} exact/>
+            <Route path='/basket' render={()=><Basket />} exact/>
+            
+            <div>
+              <Route path='/pizza' render={()=><Pizza/>} exact/>
+            </div>
+            
+
+        </div>
     </div>
   );
 }
