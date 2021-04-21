@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPizzas } from '../../redux/reducers/pizzasReducer'
@@ -6,6 +5,7 @@ import Button from '../Button/Button'
 import Cart from '../Cart/Cart'
 import './Pizza.scss'
 import $ from 'jquery'
+import pizzasDB from '../../DB/db'
 
 const itemsProducts = ['все', 'Острые', 'Мясные', 'Вегетарианские']
 
@@ -25,8 +25,7 @@ function Pizza() {
 
 
     useEffect(() => {
-        axios.get('http://localhost:3000/db.json')
-        .then(item=>dispatch(getPizzas(item.data.pizza)))
+        dispatch(getPizzas(pizzasDB.pizza))
     }, [])
 
     

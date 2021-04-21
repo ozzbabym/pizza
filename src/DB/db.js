@@ -1,4 +1,6 @@
-{
+ 
+ let pizzasDB
+ export default pizzasDB = ({
    "pizza": [
       {
          "id": 1,
@@ -133,4 +135,4 @@
       }
    ]
    
-}
+})

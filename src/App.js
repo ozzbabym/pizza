@@ -3,8 +3,7 @@ import Header from './components/Header/Header';
 import { Route } from 'react-router';
 import Pizza from './components/Pizza/Pizza'
 import Basket from './components/Basket/Basket';
-import { useSelector, useDispatch } from 'react-redux'
-import { setTotalAll } from './redux/reducers/pizzasReducer'
+import { useSelector } from 'react-redux'
 import React from 'react'
 
 function App() {
