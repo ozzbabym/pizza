@@ -33,6 +33,7 @@ function Basket(props) {
 
     const pay = (e) => {
        console.log(e)
+       alert('ваш заказ отправлен')
     }
     
     return (

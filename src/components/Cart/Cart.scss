@@ -91,3 +91,12 @@
     border-radius: 15px;
 }
 
+@media (max-width: 578px) {
+    .cart {
+        
+        img {
+            width: 350px;
+        }
+        
+    }
+}
