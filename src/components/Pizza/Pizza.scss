@@ -14,3 +14,32 @@
     justify-content: center;
     
 }
+
+
+.modalAddShow {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    position: fixed;
+    background-color: forestgreen;
+    color: white;
+    display: none;
+    z-index: 9;
+    text-align: center;
+    padding-top: 20px;
+    opacity: 0.8;
+    top: 20%;
+    left: 45%;
+    font-size: 30px;
+
+    
+}
+
+@media (max-width: 700px) {
+    .pizza-navigation {
+        display: block;
+        max-width: 300px ;
+        margin: 0 auto;
+    }
+    
+}

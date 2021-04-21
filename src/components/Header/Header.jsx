@@ -2,37 +2,35 @@ import React from 'react'
 import './Header.scss'
 
 import pizza from '../../assets/img/pizza.png'
-import sushi from '../../assets/img/sushi.png'
-import wok from '../../assets/img/wok.png'
-import basket from '../../assets/img/basket.png'
-import Navigation from './Navigation/Navigation'
 import { Link } from 'react-router-dom'
 
-function Header() {
+function Header(props) {
+    
     return (
         <>
         <div className="header">
             <div className="label">
-                <Link to="/Pizza">
+                <Link to="/">
                     <img src={pizza} alt="картинка"/>
                 </Link>
-                <Link to="/Sushi">
-                    <img src={sushi} alt="картинка"/>
-                </Link>
-                <Link to="/Wok">
-                    <img src={wok} alt="картинка"/>
-                </Link>
+               
                 <div>
-                    <span><b>Pizza Sushi Wok</b></span>
+                    <span><b>Pizza</b></span>
                 </div>
             </div>
             <Link to='/basket'>
                 <div className="basket">
                     <div>
-                        <b>555 р</b>
+                        {props.total.totalPizzas !== 0 &&
+                        <b>{props.total.totalPizzas} ₽</b>
+                        }
                     </div>
-                    <div>
-                        <img src={basket} alt="картинка"/>
+                    <div style={{width: 50, height: 50}}>
+                        <div className="basketImg">
+                            {props.total.totalPizzasCount !== 0 &&
+                                <div>{props.total.totalPizzasCount}</div>
+                            }
+                        </div>
                     </div>
                 </div>
             </Link>

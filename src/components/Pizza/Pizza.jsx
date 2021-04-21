@@ -5,10 +5,12 @@ import { getPizzas } from '../../redux/reducers/pizzasReducer'
 import Button from '../Button/Button'
 import Cart from '../Cart/Cart'
 import './Pizza.scss'
+import $ from 'jquery'
 
 const itemsProducts = ['все', 'Острые', 'Мясные', 'Вегетарианские']
 
 function Pizza() {
+    $('#modal').fadeOut(0)
     const dispatch = useDispatch()
 
     const [choice, setChoice] = useState(0)
@@ -21,13 +23,17 @@ function Pizza() {
     const pizzas = useSelector(item=> item.pizzasReducer.pizzas)
     const pizzasSort = choice === 0 ? pizzas : pizzas.filter(item=> item.typePizza === choice) 
 
-    const pizz = useSelector(item=> console.log(item.pizzasReducer.basket))
 
     useEffect(() => {
         axios.get('http://localhost:3000/db.json')
         .then(item=>dispatch(getPizzas(item.data.pizza)))
     }, [])
 
+    
+    const modalAdd = () => {
+        $('#modal').fadeIn(100)
+        $('#modal').fadeOut(300)
+    }
 
     return (
         <div className="container-pizza">
@@ -38,8 +44,13 @@ function Pizza() {
             </div>
             <div className="cart-container">
                 {
-                pizzasSort && pizzasSort.map(item=><Cart key={item.id} {...item} pizza={item} />)
+                pizzasSort && pizzasSort.map(item=><Cart key={item.id} {...item} pizza={item} modal={modalAdd}/>)
                 }
+            </div>
+        <div id="modal" className="modalAddShow">
+                <div>
+                    Добавлено
+                </div>
             </div>
         </div>
     )

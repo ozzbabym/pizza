@@ -1,0 +1,172 @@
+.container_basket {
+    margin: 30px;
+    
+    
+    img {
+        width: 200px;
+        
+    }
+}
+
+.block_order{
+    border-radius: 15px;
+    display: flex;
+    padding: 20px;
+    margin: 30px 0px;
+}
+
+.counter {
+    display: flex;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    margin-left: 30px;
+    width: 250px;
+    
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerMob {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.delItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trashbox {
+    margin-left: 50px;
+    
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    margin-right: 100px;
+    img {
+        width: 75px;
+    }
+    div {
+        width: 100px;
+        text-align: center;
+        font-weight: 900;
+    }
+}
+
+.titleEmptyBasket {
+    text-align: center;
+    margin: 30px 0px;
+}
+.alltotalprice {
+    margin-right: 50px;
+}
+
+.basketHome{
+    display: flex;
+    justify-content: center;
+    img {
+        width: 50%;
+    }
+}
+
+.basketHomeContainer{
+    display:flex;
+    flex-direction:column;
+    
+    width: 100%;
+    justify-content: space-between;
+    
+   
+      
+}
+
+@media (max-width: 1024px) {
+    .block_order{
+        
+        display: block;
+        padding: 20px;
+        margin: 30px 0px;
+    }
+    
+    .counter {
+        display: flex;
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .description {
+        margin-left: 10px;
+        width: 200px;
+        min-height: 250px;
+        
+    }
+    
+    .total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        margin: 15px 0px;
+        width: 100%;
+        font-size: 20px;
+        
+    }
+    .delItem{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container_basket {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: 50px;
+        img {
+            width: 200px; 
+        }
+    }
+    .footer {
+        font-size: 13px;
+        display: flex;
+        
+    }
+    .alltotalprice {
+        padding: 0px 40px;
+    }
+    
+    
+    
+}
+
+@media (max-width: 650px){
+    .footer {
+        font-size: 15px;
+        display: flex;
+        :nth-child(1){
+            font-size: 15px;
+        }
+    }
+    .alltotalprice {
+        margin: 0px 5px;
+    }
+    
+}

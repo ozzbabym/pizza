@@ -4,17 +4,20 @@ import { setBasket } from '../../redux/reducers/pizzasReducer'
 import Button from '../Button/Button'
 import './Cart.scss'
 
+const pricePizzaSize = [0, 50, 100]
+const pricePizzaType = [0, 50]
 
-
-function Cart({pizza, imageUrl, namePizza, description, type, size, price }) {
+function Cart({modal, pizza, imageUrl, namePizza, description, type, size, price }) {
     const [sizeChoice, setSizeChoice] = useState(0)
     const [doughChoice, setDoughChoice] = useState(0)
-
+    
     const dispatch = useDispatch()
-
+    
 
     const addPizza = () => {
-        dispatch(setBasket({...pizza, size: sizeChoice,type: doughChoice}))
+        modal()
+        dispatch(setBasket({...pizza, size: size[sizeChoice],type: doughChoice, price: price+pricePizzaSize[sizeChoice]+pricePizzaType[doughChoice]}))
+        
     }
 
     return (
@@ -24,7 +27,7 @@ function Cart({pizza, imageUrl, namePizza, description, type, size, price }) {
                 <div className='name-pizza'>
                     <h3>{namePizza}</h3>
                 </div>
-                <div className="description">
+                <div className="descriptionpizza">
                     {description}
                 </div>
                 <br />
@@ -42,7 +45,7 @@ function Cart({pizza, imageUrl, namePizza, description, type, size, price }) {
                 </div>
                 <br />
                 <div className="priceAndButton">
-                    <div><b>от {price} ₽</b></div>
+                    <div><b>от {price+pricePizzaSize[sizeChoice]+pricePizzaType[doughChoice]} ₽</b></div>
                     <div>
                         <Button click={addPizza}>Добавить</Button>
                     </div>

@@ -1,21 +1,22 @@
-.button {
+.buttonCounter {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 120px;
+    width: 40px;
     height: 40px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 30px;
     cursor: pointer;
     box-shadow: 2px 2px 10px 2px #afecfa;
     transition: all 0.1s;
     font-size: 20px;
-    padding: 0 10px;
+    margin: 0 20px;
     border: 3px solid #afecfa;
 }
-.button:active {
+.buttonCounter:active {
     background-color: rgba(175, 236, 250, 0.5);
     box-shadow: none;
+    
 }
 
 .buttonChoice {
@@ -24,9 +25,8 @@
     top: 2px;
 }
 
-.button:hover{
+.buttonCounter:hover{
     transition: all 0.5;
     position: relative;
-    top: 2px;
     cursor: pointer;
 }
