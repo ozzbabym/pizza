@@ -14,6 +14,7 @@ function Basket(props) {
 
     const addCount = (e) => {
         dispatch(addCountPizza(e))
+        
     }
     const delCount = (e) => {
         dispatch(delCountPizza(e))
@@ -41,7 +42,9 @@ function Basket(props) {
         {props.total.totalPizzasCount === 0 ?
             <div className="basketHomeContainer">
                 <div className="basketHome">
-                    <img  src={trashShop} alt=""/>
+                    <div>
+                        <img  src={trashShop} alt="картинка"/>
+                    </div>
                 </div>
                 <div className="titleEmptyBasket">
                     <h1>Ваша корзина пуста!</h1>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { setBasket } from '../../redux/reducers/pizzasReducer'
+import { useDispatch, useSelector } from 'react-redux'
+import { setBasket, addCountPizza } from '../../redux/reducers/pizzasReducer'
 import Button from '../Button/Button'
 import './Cart.scss'
 
@@ -13,11 +13,12 @@ function Cart({modal, pizza, imageUrl, namePizza, description, type, size, price
     
     const dispatch = useDispatch()
     
-
+    const pizzasBasket = useSelector(item=> item.pizzasReducer.basket)
+    
+   
     const addPizza = () => {
         modal()
         dispatch(setBasket({...pizza, size: size[sizeChoice],type: doughChoice, price: price+pricePizzaSize[sizeChoice]+pricePizzaType[doughChoice]}))
-        
     }
 
     return (

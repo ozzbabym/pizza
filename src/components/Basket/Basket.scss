@@ -174,8 +174,6 @@
 @media (max-width: 594px) {
     .container_basket {
         margin: 30px;
-        
-        
         img {
             width: 350px;
             
@@ -189,5 +187,10 @@
     .alltotalprice {
         margin: 0px -30px;
         padding: opx;
+    }
+    .basketHome {
+        display: flex;
+        text-align: center;
+        width: 100%;
     }
 }

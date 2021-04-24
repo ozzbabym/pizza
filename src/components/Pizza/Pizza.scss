@@ -41,6 +41,15 @@
         max-width: 300px ;
         margin: 0 auto;
     }
+    .modalAddShow {
+        left:20%
+    }
+}
+
+@media (max-width: 800px) {
     
+    .modalAddShow {
+        left:35%
+    }
 }
 

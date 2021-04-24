@@ -13,14 +13,15 @@ export const pizzasReducer = (state = initialState, action) => {
         case 'GET_PIZZAS':
             return { ...state, pizzas: action.pizzas }
         
-        case 'SET_BASKET':
+        case 'SET_BASKET':{
+            
             return {...state, basket: [...state.basket, action.trade]}
-
+            }
         case 'TOTAL_ALL':
             return {...state, totalPizza: action.total.totalPizzas, totalCount: action.total.totalPizzasCount  }
         case 'ADD_COUNT':
             const newItems = state.basket.map(item=>{
-                if(item.id===action.item.id && item.size === action.item.size){
+                if(item.id===action.item.id && item.size === action.item.size && item.type === action.item.type){
                     const price = state.pizzas.filter(value=> value.id === item.id)
                     return {...item, count: item.count+1, price: item.price + price[0].price }
                 }else{ 
@@ -30,7 +31,7 @@ export const pizzasReducer = (state = initialState, action) => {
             return {...state, basket: newItems  }
         case 'DEL_COUNT':
             const newItem = state.basket.map(item=>{
-                if(item.count>1 && item.id===action.item.id && item.size === action.item.size){
+                if(item.count>1 && item.id===action.item.id && item.size === action.item.size && item.type === action.item.type){
                     const price = state.pizzas.filter(value=> value.id === item.id)
                     return {...item, count: item.count-1, price: item.price - price[0].price }
                 }else{ 
